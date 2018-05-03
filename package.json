@@ -3,19 +3,25 @@
   "version": "1.0.0",
   "description": "Imitate Tinder by Vue.js",
   "main": "dist/vue-tinder.js",
+  "author": {
+    "name": "JohnnyDan",
+    "email": "shanlh841271734@live.com"
+  },
   "scripts": {
     "dev": "webpack-dev-server --info=false",
-    "build": "NODE_ENV=production webpack -p --progress --hide-modules"
+    "build": "NODE_ENV=production webpack -p --progress --hide-modules",
+    "release": "bash ./release.sh"
   },
   "keywords": [
     "tinder",
     "tantan",
     "vue"
   ],
-  "author": {
-    "name": "JohnnyDan",
-    "email": "shanlh841271734@live.com"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shanlh/vue-tinder.git"
   },
+  "homepage": "https://github.com/shanlh/vue-tinder",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^8.4.1",
