@@ -6,7 +6,7 @@
 
 ?> 本DEMO的图片素材使用： [https://picsum.photos](https://picsum.photos)。
 
-<iframe width="100%" height="667" src="//jsfiddle.net/JohnnyDan/z9ev725e/20/embedded/result,html,css,js" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="667" src="//jsfiddle.net/JohnnyDan/z9ev725e/21/embedded/result,html,css,js" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 * 参考：
   * [v-cloak](https://cn.vuejs.org/v2/api/#v-cloak)
