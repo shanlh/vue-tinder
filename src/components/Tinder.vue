@@ -392,9 +392,10 @@ export default {
      * @method submitDecide
      * @param  {Boolean}    type 类型，like：喜欢，nope：不喜欢，super：超喜欢
      * @param  {String}     key  当前卡片的key
+     * @param  {Object}     item 卡片对象
      */
     submitDecide (type, item) {
-      this.$emit('submit', {type, item})
+      this.$emit('submit', {type, key: item.key, item})
     }
   }
 }
