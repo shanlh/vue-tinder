@@ -100,8 +100,8 @@
       <img style="width:70px;" src="./images/help.png" @click="decide('help')">
     </div>
   </div>
-  <script src="../node_modules/vue/dist/vue.js"></script>
-  <script src="../vue-tinder.js"></script>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/vue-tinder@1.1.1"></script>
   <script>
   // eslint-disable-next-line
   new Vue({
@@ -130,8 +130,9 @@
       decide: function (choice) {
         if (choice === 'help') {
           window.location.href = 'https://shanlh.github.io/vue-tinder'
+        } else {
+          this.$refs.tinder.decide(choice)
         }
-        this.$refs.tinder.decide(choice)
       }
     }
   })
