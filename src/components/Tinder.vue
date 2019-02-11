@@ -37,7 +37,6 @@
 <script>
 import TinderCard from './TinderCard'
 let resizeTimer
-
 const initStatus = () => ({
   touchId: null,
   start: {},
@@ -46,7 +45,6 @@ const initStatus = () => ({
   ratio: 0,
   result: null
 })
-
 export default {
   name: 'tinder',
   components: {
@@ -273,7 +271,7 @@ export default {
       this.state.result = type
       const item = this.queue.shift()
       this.$emit('update:queue', this.queue)
-      this.submitDecide(type, item[this.keyName])
+      this.submitDecide(type, item)
     },
     /**
      * 首屏卡片style
@@ -395,8 +393,8 @@ export default {
      * @param  {Boolean}    type 类型，like：喜欢，nope：不喜欢，super：超喜欢
      * @param  {String}     key  当前卡片的key
      */
-    submitDecide (type, key) {
-      this.$emit('submit', {type, key})
+    submitDecide (type, item) {
+      this.$emit('submit', {type, item})
     }
   }
 }
@@ -407,15 +405,12 @@ export default {
   position: relative;
   -webkit-tap-highlight-color: transparent;
 }
-
 /* style正在被数据绑定，只能使用important来覆盖 */
 .v-move { transition: none!important; }
-
 .pointer-wrap {
   pointer-events: none;
   transition: opacity .2s ease;
 }
-
 /* 通过调用函数让卡片消失时需要直接显示对应指示器，不需要渐变 */
 .tinder-card.nope .nope-pointer-wrap,
 .tinder-card.like .like-pointer-wrap,
