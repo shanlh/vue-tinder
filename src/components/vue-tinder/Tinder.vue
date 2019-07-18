@@ -8,28 +8,49 @@
     @mousedown="start"
     @mousemove="move"
     @mouseup="end"
-    @mouseout="end">
-    <transition-group
-      @leave="leave"
-      @afterLeave="gone">
-      <TinderCard
-        v-if="index<2"
-        :style="isCur(index)?mainCardStyle():benchCardStyle(index)"
-        v-for="(item,index) in queue"
-        :key="item[keyName]">
-        <slot :data="item" :index="index"></slot>
-        <template v-if="isCur(index)">
-          <span slot="nope" class="pointer-wrap nope-pointer-wrap" :style="{opacity:nopeOpacity}">
-            <slot name="nope" :opacity="nopeOpacity"></slot>
-          </span>
-          <span slot="like" class="pointer-wrap like-pointer-wrap" :style="{opacity:likeOpacity}">
-            <slot name="like" :opacity="likeOpacity"></slot>
-          </span>
-          <span v-if="allowSuper" slot="super" class="pointer-wrap super-pointer-wrap" :style="{opacity:superOpacity}">
-            <slot name="super" :opacity="superOpacity"></slot>
-          </span>
-        </template>
-      </TinderCard>
+    @mouseout="end"
+  >
+    <!-- enter-active-class="fuck" -->
+    <transition-group @leave="leave" @afterLeave="gone">
+      <template v-for="(item, index) in queue">
+        <TinderCard
+          v-if="index < 2"
+          :index="index"
+          :key="item[keyName]"
+          :state="state"
+          :size="size"
+          :status="status"
+          :now-key="nowKey"
+          :id="item[keyName]"
+        >
+          <!-- :style="isCur(index) ? mainCardStyle() : benchCardStyle(index)" -->
+          <slot :data="item" :index="index"></slot>
+          <template v-if="isCur(index)">
+            <span
+              slot="nope"
+              class="pointer-wrap nope-pointer-wrap"
+              :style="{ opacity: nopeOpacity }"
+            >
+              <slot name="nope" :opacity="nopeOpacity"></slot>
+            </span>
+            <span
+              slot="like"
+              class="pointer-wrap like-pointer-wrap"
+              :style="{ opacity: likeOpacity }"
+            >
+              <slot name="like" :opacity="likeOpacity"></slot>
+            </span>
+            <span
+              v-if="allowSuper"
+              slot="super"
+              class="pointer-wrap super-pointer-wrap"
+              :style="{ opacity: superOpacity }"
+            >
+              <slot name="super" :opacity="superOpacity"></slot>
+            </span>
+          </template>
+        </TinderCard>
+      </template>
     </transition-group>
   </div>
 </template>
@@ -46,7 +67,7 @@ const initStatus = () => ({
   result: null
 })
 export default {
-  name: 'tinder',
+  name: 'Tinder',
   components: {
     TinderCard
   },
@@ -57,7 +78,7 @@ export default {
     },
     queue: {
       type: Array,
-      default: () => ([])
+      default: () => []
     },
     keyName: {
       type: String,
@@ -83,13 +104,21 @@ export default {
     },
     state: initStatus()
   }),
+  watch: {
+    queue(newVal, oldVal) {
+      if (newVal.length > oldVal.length && newVal[0] !== oldVal[0]) {
+        // eslint-disable-next-line
+        console.log('加了')
+      }
+    }
+  },
   computed: {
     /**
      * 当前可被滑动的卡片的key
      * @method nowKey
      * @return {String} key
      */
-    nowKey () {
+    nowKey() {
       if (this.status === 2) {
         return null
       }
@@ -100,7 +129,7 @@ export default {
      * @method pointerOpacity
      * @return {Opacity}  不透明度
      */
-    pointerOpacity () {
+    pointerOpacity() {
       return this.state.ratio / this.pointerThreshold
     },
     /**
@@ -108,7 +137,7 @@ export default {
      * @method likeOpacity
      * @return {Opacity}
      */
-    likeOpacity () {
+    likeOpacity() {
       if (this.superOpacity) {
         return 0
       }
@@ -119,7 +148,7 @@ export default {
      * @method nopeOpacity
      * @return {Opacity}
      */
-    nopeOpacity () {
+    nopeOpacity() {
       return -this.likeOpacity
     },
     /**
@@ -127,7 +156,7 @@ export default {
      * @method superOpacity
      * @return {Opacity}  不透明度
      */
-    superOpacity () {
+    superOpacity() {
       if (!this.allowSuper) {
         return 0
       }
@@ -137,9 +166,10 @@ export default {
       return ratio > pointerOpacity ? ratio : 0
     }
   },
-  mounted () {
+  mounted() {
     if (!this.$el.offsetWidth || !this.$el.offsetHeight) {
-      console.warn('请设置vue-tinder的宽高')
+      /* eslint-disable-next-line */
+      console.warn('请设置vue-tinder的宽高');
     }
     this.size = {
       top: this.$el.offsetTop,
@@ -148,7 +178,7 @@ export default {
     }
     window.onresize = this.getSize
   },
-  destroyed () {
+  destroyed() {
     window.removeEventListener('onresize', this.getSize)
   },
   methods: {
@@ -156,7 +186,7 @@ export default {
      * 获取组件尺寸及位置，用以判断旋转角度
      * @method getSize
      */
-    getSize () {
+    getSize() {
       clearInterval(resizeTimer)
       resizeTimer = setTimeout(() => {
         this.size = {
@@ -172,7 +202,7 @@ export default {
      * @param  {Number}  index 卡片索引值
      * @return {Boolean}       true/false
      */
-    isCur (index) {
+    isCur(index) {
       return index === 0 && this.queue[index][this.keyName] === this.nowKey
     },
     /**
@@ -180,7 +210,7 @@ export default {
      * @method start
      * @param  {Object} e 触摸/鼠标事件
      */
-    start (e) {
+    start(e) {
       const state = this.state
       if (state.touchId !== null || this.status === 2) {
         return
@@ -200,12 +230,13 @@ export default {
       // 判断触摸起始位置在卡片的上部还是下部
       const top = this.size.top
       const height = this.size.height
-      const centerY = (top + height / 2)
+      const centerY = top + height / 2
       const startPoint = pageY > centerY ? -1 : 1
       // 初始化
       this.status = 1
       this.state = {
-        touchId: e.type === 'touchstart' ? e.changedTouches[0].identifier : 'mouse',
+        touchId:
+          e.type === 'touchstart' ? e.changedTouches[0].identifier : 'mouse',
         start: {
           x: pageX,
           y: pageY
@@ -221,12 +252,15 @@ export default {
      * @method move
      * @param  {Object} e 触摸/鼠标事件
      */
-    move (e) {
+    move(e) {
       e.preventDefault()
       const state = this.state
-      if (state.touchId === null ||
-          this.status === 2 ||
-          (e.type === 'touchmove' && state.touchId !== e.changedTouches[0].identifier)) {
+      if (
+        state.touchId === null ||
+        this.status === 2 ||
+        (e.type === 'touchmove' &&
+          state.touchId !== e.changedTouches[0].identifier)
+      ) {
         return
       }
       let pageX, pageY
@@ -247,15 +281,23 @@ export default {
      * @method end
      * @param  {Object} e 触摸/鼠标事件
      */
-    end (e) {
-      if (e.type === 'touchstart' && this.state.touchId !== e.changedTouches[0].identifier) {
+    end(e) {
+      if (
+        e.type === 'touchstart' &&
+        this.state.touchId !== e.changedTouches[0].identifier
+      ) {
         return
       }
       if (this.status === 2) {
         return
       }
       if (Math.abs(this.pointerOpacity) >= 1 || this.superOpacity >= 1) {
-        const result = this.superOpacity >= 1 ? 'super' : this.pointerOpacity > 0 ? 'like' : 'nope'
+        const result =
+          this.superOpacity >= 1
+            ? 'super'
+            : this.pointerOpacity > 0
+            ? 'like'
+            : 'nope'
         this.shiftCard(result)
       } else {
         this.gone()
@@ -266,72 +308,12 @@ export default {
      * @method shiftCard
      * @param  {String}  type 移除方式，like：喜欢，nope：不喜欢，super：超喜欢
      */
-    shiftCard (type) {
+    shiftCard(type) {
       this.status = 2
       this.state.result = type
       const item = this.queue.shift()
       this.$emit('update:queue', this.queue)
       this.submitDecide(type, item)
-    },
-    /**
-     * 首屏卡片style
-     * @method mainCardStyle
-     * @param  {Number}       index 卡片索引值，用于判断是否可以移动
-     * @return {Object}             style
-     */
-    mainCardStyle () {
-      const style = { zIndex: 10 }
-      if (this.status === 0) { // 初始化位置
-        style['transform'] = 'scale(1) translate3d(0,0,0) rotate(0deg)'
-        style['transition'] = 'all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-      } else if (this.status === 1) { // 移动中，位移及旋转角度
-        const state = this.state
-        const {start, move, startPoint} = state
-        const x = move.x - start.x || 0
-        const y = move.y - start.y || 0
-        // 横向滑动卡片一半宽(0.5)时为标准状态
-        const ratio = x / (this.size.width * 0.5)
-        state.ratio = ratio
-        // 标准状态（ratio为1时）10度角
-        const rotate = 10 * ratio * startPoint
-        style['transform'] = `translate3d(${x}px,${y}px,0) rotate(${rotate}deg)`
-        style['transition'] = 'none'
-      }
-      return style
-    },
-    /**
-     * 替补卡片style
-     * @method benchCardStyle
-     * @param  {Number}  index 卡片索引值，用于判断是否为准替补卡片
-     * @return {Object}        style
-     */
-    benchCardStyle (index) {
-      // 当前条件卡片不应该被显示
-      if ((index === 1 && this.status === 2) || index > 1) {
-        return {
-          zIndex: -1,
-          opacity: 0
-        }
-      }
-      const style = {zIndex: 9}
-      if (this.status === 0) { // 初始化替补图位置
-        style['transform'] = 'scale3d(0.95,0.95,1)'
-        style['transition'] = 'all 500ms ease'
-      } else if (this.status === 1) { // 移动中，替补图渐渐放大
-        // scale区间：[0.95-1]
-        let ratio = this.state.ratio
-        if (ratio > 1) {
-          ratio = 1
-        } else if (ratio < -1) {
-          ratio = -1
-        }
-        style['transform'] = `scale3d(${Math.abs(ratio) * 0.05 + 0.95},${Math.abs(ratio) * 0.05 + 0.95},1)`
-        style['transition'] = 'none'
-      } else if (this.status === 2) { // 第一张在消失中，第二张替补为主图，要过渡到最大
-        style['transform'] = 'scale3d(1,1,1)'
-        style['transition'] = 'all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-      }
-      return style
     },
     /**
      * 当前卡片正在离开
@@ -341,9 +323,9 @@ export default {
      * @param  {element}  el   当前卡片
      * @param  {Function} done 回调函数
      */
-    leave (el, done) {
+    leave(el, done) {
       const state = this.state
-      const {start, move, startPoint} = state
+      const { start, move, startPoint } = state
       let x = move.x - start.x || 0
       let y = move.y - start.y || 0
       if (state.result === 'super') {
@@ -354,8 +336,8 @@ export default {
       }
       const ratio = x / (this.size.width * 0.5)
       const rotate = (ratio / (0.8 / 0.5)) * 15 * startPoint
-      const duration = state.touchId === null ||
-                       state.result === 'super' ? 800 : 300
+      const duration =
+        state.touchId === null || state.result === 'super' ? 800 : 300
       el.className += ` ${state.result}`
       el.style.opacity = 0
       el.style.transform = `translate3d(${x}px,${y}px,0) rotate(${rotate}deg)`
@@ -366,7 +348,7 @@ export default {
      * 当前卡片已经离开
      * @method gone
      */
-    gone () {
+    gone() {
       this.status = 0
       this.state = initStatus()
     },
@@ -375,11 +357,11 @@ export default {
      * @method decide
      * @param  {String} type like：喜欢，nope：不喜欢，super：超喜欢
      */
-    decide (type) {
+    decide(type) {
       if (this.state.touchId || this.status !== 0 || !this.nowKey) {
         return
       }
-      this.state.start = {x: 0, y: 0}
+      this.state.start = { x: 0, y: 0 }
       this.state.move = {
         x: type === 'super' ? 0 : type === 'like' ? 1 : -1,
         y: type === 'super' ? -1 : 0
@@ -394,9 +376,16 @@ export default {
      * @param  {String}     key  当前卡片的key
      * @param  {Object}     item 卡片对象
      */
-    submitDecide (type, item) {
-      this.$emit('submit', {type, key: item.key, item})
+    submitDecide(type, item) {
+      this.$emit('submit', { type, key: item.key, item })
     }
+    // ,
+    // demo(el) {
+    //   // el.className = 'tinder-card '
+    //   // style['transform'] = 'scale(1) translate3d(0,0,0) rotate(0deg)'
+    //   //   style['transition'] =
+    //   //     'all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+    // }
   }
 }
 </script>
@@ -407,15 +396,34 @@ export default {
   -webkit-tap-highlight-color: transparent;
 }
 /* style正在被数据绑定，只能使用important来覆盖 */
-.v-move { transition: none!important; }
+.v-move {
+  transition: none !important;
+}
 .pointer-wrap {
   pointer-events: none;
-  transition: opacity .2s ease;
+  transition: opacity 0.2s ease;
 }
 /* 通过调用函数让卡片消失时需要直接显示对应指示器，不需要渐变 */
 .tinder-card.nope .nope-pointer-wrap,
 .tinder-card.like .like-pointer-wrap,
 .tinder-card.super .super-pointer-wrap {
-  opacity: 1!important;
+  opacity: 1 !important;
 }
+/*
+.fuck {
+  opacity: 0 !important;
+  animation: appear 300ms 300ms;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+} */
+/* animation: name duration timing-function delay iteration-count direction fill-mode; */
 </style>
