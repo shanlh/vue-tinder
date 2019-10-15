@@ -26,6 +26,7 @@
   "license": "MIT",
   "dependencies": {
     "core-js": "^2.6.5",
+    "lodash.difference": "^4.5.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {
