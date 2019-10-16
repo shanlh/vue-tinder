@@ -17,9 +17,7 @@
         <div
           class="pic"
           :style="{
-            'background-image': `url(https://cn.bing.com//th?id=OHR.${
-              scope.data.id
-            }_UHD.jpg&pid=hp&w=720&h=1280&rs=1&c=4&r=0)`
+            'background-image': `url(https://cn.bing.com//th?id=OHR.${scope.data.id}_UHD.jpg&pid=hp&w=720&h=1280&rs=1&c=4&r=0)`
           }"
         />
       </template>
@@ -178,7 +176,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 47px;
+  bottom: 30px;
   margin: auto;
   height: 65px;
   display: flex;
