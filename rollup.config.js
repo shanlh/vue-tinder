@@ -8,7 +8,7 @@ export default {
   input: 'src/components/index.js',
   output: {
     name: 'vue-tinder',
-    file: 'bundle.js',
+    file: 'lib/vue-tinder.js',
     format: 'umd'
   },
   plugins: [
