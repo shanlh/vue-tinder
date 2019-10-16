@@ -25,7 +25,7 @@ export default {
       const beforeIndex = el.dataset.index - 0 + 1
       el.style.opacity = 0
       el.style.transform = this.getTransform(beforeIndex)
-      if (this.rewindKeys.includes(el.dataset.id)) {
+      if (this.rewindKeys.indexOf(el.dataset.id) > -1) {
         // 这里与 leave 函数中，卡片被移除后目的地的计算方式相同
         let x = -1 // 从左边 rewind
         x += this.size.width * (x < 0 ? -0.5 : 0.5)
@@ -58,7 +58,7 @@ export default {
       let duration =
         state.touchId === null || state.result === 'super' ? 800 : 300
       el.style.opacity = 0
-      if (this.leavingKeys.includes(el.dataset.id)) {
+      if (this.leavingKeys.indexOf(el.dataset.id) > -1) {
         // 操作移除
         el.className += ` ${state.result}`
         el.style.transform = `translate3d(${x}px,${y}px,0) rotate(${rotate}deg)`

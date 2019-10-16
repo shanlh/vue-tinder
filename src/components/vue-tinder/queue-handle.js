@@ -1,5 +1,15 @@
-import difference from 'lodash.difference'
 import { STATUS } from './status'
+
+const difference = (array, exclude) => {
+  const result = []
+  for (let i = 0; i < array.length; i++) {
+    if (exclude.indexOf(array[i]) > -1) {
+      break
+    }
+    result.push(array[i])
+  }
+  return result
+}
 
 export default {
   data: () => ({
@@ -30,10 +40,10 @@ export default {
             const id = item.id
             const newUniqueKey = id + Math.random()
             if (
-              this.leavingKeys.includes(item.uniqueKey) ||
-              this.leavingKeys.includes(id) ||
-              this.rewindKeys.includes(item.uniqueKey) ||
-              this.rewindKeys.includes(id)
+              this.leavingKeys.indexOf(item.uniqueKey) > -1 ||
+              this.leavingKeys.indexOf(id) > -1 ||
+              this.rewindKeys.indexOf(item.uniqueKey) > -1 ||
+              this.rewindKeys.indexOf(id) > -1
             ) {
               // 已经移除过再出现，为了避免 dom 被重用中断了之前的消失动画，需要给一个新的 key
               item.uniqueKey = newUniqueKey
@@ -66,9 +76,9 @@ export default {
           const item = this.list[i]
           if (item) {
             if (
-              this.leavingKeys.includes(item.id) ||
+              this.leavingKeys.indexOf(item.id) > -1 ||
               // 被隐藏，但即将出现的 item，需要创建 uniqueKey，避免出现正在隐藏的情况（与刚出来的 key 冲突）
-              this.hidingKeys.includes(item.id)
+              this.hidingKeys.indexOf(item.id) > -1
             ) {
               item.uniqueKey = item.id + Math.random()
             }

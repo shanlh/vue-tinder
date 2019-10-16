@@ -23,7 +23,9 @@
         :state="state"
         :ratio="ratio"
         :rewind="
-          rewindKeys.includes(item.uniqueKey || item[keyName]) ? index : false
+          rewindKeys.indexOf(item.uniqueKey || item[keyName]) > -1
+            ? index
+            : false
         "
         :tinder-mounted="tinderMounted"
         :scale-step="scaleStep"
@@ -69,7 +71,7 @@
 </template>
 
 <script>
-import TinderCard from './TinderCard'
+import TinderCard from './TinderCard.vue'
 import queueHandle from './queue-handle'
 import touchEvent from './touch-event'
 import transitionEvent from './transition-event'
