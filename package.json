@@ -9,7 +9,7 @@
   },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib src/components/vue-tinder/Tinder.vue",
+    "build": "rollup -c rollup.config.js",
     "lint": "vue-cli-service lint",
     "release": "bash ./release.sh"
   },
@@ -25,8 +25,6 @@
   "homepage": "https://github.com/shanlh/vue-tinder",
   "license": "MIT",
   "dependencies": {
-    "core-js": "^2.6.5",
-    "lodash.difference": "^4.5.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -37,6 +35,11 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-uglify": "^6.0.3",
+    "rollup-plugin-vue": "^5.0.1",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
