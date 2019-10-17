@@ -8,5 +8,5 @@
 <!-- * Multiple themes -->
 <!-- * Not build static html files -->
 
-[GitHub](https://github.com/shanlh/vue-tinder)
+[View GitHub](https://github.com/shanlh/vue-tinder)
 [Get Started](/installation)

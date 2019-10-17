@@ -15,9 +15,12 @@
     window.$docsify = {
       name: 'vue-tinder',
       loadSidebar: true,
-      loadNavbar: true,
+      loadNavbar: '_navbar.md',
       subMaxLevel: 2,
-      coverpage: true,
+      coverpage: {
+        '/': '_coverpage.md',
+        '/zh-cn': 'zh-cn/_coverpage.md'
+      },
       onlyCover: true
     }
   </script>

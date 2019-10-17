@@ -4,7 +4,7 @@
 
 https://unpkg.com/vue-tinder/dist/vue-tinder.js
 
-Unpkg.com 提供了基于 NPM 的 CDN 链接。上面的链接会一直指向在 NPM 发布的最新版本。你也可以像 https://unpkg.com/vue-tinder@2.0.0/dist/vue-tinder.js 这样指定 版本号 或者 Tag。
+Unpkg.com 提供了基于 NPM 的 CDN 链接。上面的链接会一直指向在 NPM 发布的最新版本。你也可以像 https://unpkg.com/vue-tinder@1.1.1/dist/vue-tinder.js 这样指定 版本号 或者 Tag。
 
 在 Vue 后面加载 vue-tinder，它会自动安装的：
 
