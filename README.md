@@ -9,7 +9,6 @@
 - 可以配置不同的上下间距，实现多种卡片堆叠形态
 - 兼容其他 css 单位如：rem
 - 支持异步操作，为用户带来丝滑的体验
-- 支持 SSR
 - 体积很小，只有 5kb
 - 可根据使用情况定制 pointerThreshold、superThreshold
 
