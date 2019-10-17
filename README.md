@@ -1,42 +1,27 @@
-# vue-tinder
+# VueTinder 简介
 
-## 简介
+`VueTinder` 是一款能让你快速实现 [Tinder](https://tinder.com) 主要功能的 Vue 组件，[使用文档](https://shanlh.github.io/vue-tinder)。
 
-仿造Tinder的Vue组件，类似国内的探探、陌陌等APP的左右滑动卡片功能。[vue-tinder 文档](https://shanlh.github.io/vue-tinder)
+## 特性
 
-![](.gitbook/assets/ping-mu-lu-zhi-2019101713.19.47-2.gif)
+- 用❤️开发，在 Chrome 动画调试速度 10% 时依然能有出色并自然的表现
+- 新支持回退功能，可以根据实际使用情况回退一个或多个
+- 可以配置不同的上下间距，实现多种卡片堆叠形态
+- 兼容其他 css 单位如：rem
+- 支持异步操作，为用户带来丝滑的体验
+- 支持 SSR
+- 体积很小，只有 5kb
+- 可根据使用情况定制 pointerThreshold、superThreshold
 
-## 安装
+[在线预览](https://codesandbox.io/s/vue-template-by7qi)
 
-### 直接下载 / CDN
+![](https://raw.githubusercontent.com/shanlh/vue-tinder/master/.gitbook/assets/ping-mu-lu-zhi-2019101713.19.47-2.gif)
 
-[https://unpkg.com/vue-tinder/dist/vue-tinder.js](https://unpkg.com/vue-tinder/dist/vue-tinder.js)
+## TODO
 
-Unpkg.com 提供了基于 NPM 的 CDN 链接。上面的链接会一直指向在 NPM 发布的最新版本。你也可以像 [https://unpkg.com/vue-tinder@1.1.1/dist/vue-tinder.js](https://unpkg.com/vue-tinder@1.1.1/dist/vue-tinder.js) 这样指定 版本号 或者 Tag。
+VueTinder 仍然处于开发中，这里有一些目前已知存在的问题：
 
-在 Vue 后面加载 vue-tinder，它会自动安装的：
+- 移动端在手指侧滑返回时可能会误触到 VueTinder
+- 非 sync 模式下，执行操作后立刻按住卡片不放，等前卡片完全消失即 DOM 节点被移除后会卡住，组件内 Touchend、Touchcancel 事件不触发
 
-```markup
-<script src="/path/to/vue.js"></script>
-<script src="/path/to/vue-tinder.js"></script>
-```
-
-### NPM / Yarn
-
-```text
-npm install vue-tinder --save
-# or
-yarn add vue-tinder
-```
-
-### 构建开发版
-
-如果你想使用最新的开发版，就得从 GitHub 上直接 clone，然后自己 build 一个 vue-tinder。
-
-```text
-git clone https://github.com/shanlh/vue-tinder.git node_modules/vue-tinder
-cd node_modules/vue-tinder
-npm install
-npm run build
-```
-
+欢迎你为 VueTinder 的开发作出贡献。
