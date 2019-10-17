@@ -2,11 +2,9 @@
 
 # vue-tinder
 
-> Imitate Tinder by Vue.js
+>You can also quickly make a Tinder.
 
-* Simple and lightweight (~4.7kb gzipped)
-<!-- * Multiple themes -->
-<!-- * Not build static html files -->
+* Simple and lightweight (~5kb gzipped)
 
 [View GitHub](https://github.com/shanlh/vue-tinder)
 [Get Started](/introduction)

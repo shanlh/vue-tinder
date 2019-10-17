@@ -2,6 +2,8 @@
 
 > 教程中的案例代码将使用 ES2015 来编写。
 
+?> 本教程图片素材使用 [BING 美图](https://bing.com/)
+
 作为了解这款插件的第一步，我们将会做一个能选择是否喜欢的 Bing Images，先来看看结果吧，滑动卡片试试：
 
 <iframe width="100%" height="667" src="https://codesandbox.io/embed/m75xlz4r4j" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>

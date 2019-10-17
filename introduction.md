@@ -1,20 +1,19 @@
-# Introduction
+# 简介
 
-VueTinder 是一款实现 [Tinder](https://tinder.com) 主要功能的 Vue 组件。
+`VueTinder` 是一款能让你快速实现 [Tinder](https://tinder.com) 主要功能的 Vue 组件，[使用文档](https://shanlh.github.io/vue-tinder)。
 
 ## 特性
 
-- 带着❤️开发，在 Chrome 动画调试速度 10% 时依然能有出色并自然的表现，没有瑕疵
-- 新支持回退功能，并支持同时回退多个
-- 可以根据喜好调整卡片的上下间距以实现多种卡片摆放样式
-- 适配性强，可以兼容其他 css 单位如：rem
-- 新支持非同步操作执行，为用户带来丝滑的体验，你也可以选择关闭，让用户等卡片完全消失后才能继续操作
-- 如对浏览器要求高，请酌情使用 offsetY
+- 用❤️开发，在 Chrome 动画调试速度 10% 时依然能有出色并自然的表现
+- 新支持回退功能，可以根据实际使用情况回退一个或多个
+- 可以配置不同的上下间距，实现多种卡片堆叠形态
+- 兼容其他 css 单位如：rem
+- 支持异步操作，为用户带来丝滑的体验
 - 支持 SSR
 - 体积很小，只有 5kb
-- 可定制，super、throld啥的
+- 可根据使用情况定制 pointerThreshold、superThreshold
 
-DEMO 如下：
+[在线 DEMO](https://codesandbox.io/s/vue-template-by7qi)
 
 ![](https://raw.githubusercontent.com/shanlh/vue-tinder/master/.gitbook/assets/ping-mu-lu-zhi-2019101713.19.47-2.gif)
 

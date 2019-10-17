@@ -1,11 +1,5 @@
 # 快速上手
 
-<!-- > 教程中的案例代码将使用 ES2015 来编写。 -->
-
-<!-- 此教程直接引用script，单文件组件使用方法类似，只是不需要v-cloak指令了，需要注意的是 `.v-tinder` 在组件中为scoped，属性选择器优先级较高，默认样式有 `position: relative` ，如需修改，建议用跟高优先级的选择器覆盖（如.vue-tinder前加 `id选择器` ）。本组件DEMO如下：
-
-?> 本 DEMO 的图片素材使用 [BING 美图](http://bing.plmeizi.com/) -->
-
 ## 安装插件
 
 ### NPM / Yarn
@@ -65,8 +59,13 @@ Vue.use(VueTinder)
 
 和 `script` 引入方式一样，使用插件形式也会将 `VueTinder` 组件注册为全局组件，在你自己的组件中就无需再使用 `components` 属性重复注册了。
 
+## 构建开发版
 
-<!-- <iframe width="100%" height="667" src="//jsfiddle.net/JohnnyDan/z9ev725e/21/embedded/result,html,css,js" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+如果你想使用最新的开发版，就得从 GitHub 上直接 clone，然后自己 build 一个 `VueTinder`。
 
-* 参考：
-  * [v-cloak](https://cn.vuejs.org/v2/api/#v-cloak) -->
+```text
+git clone https://github.com/shanlh/vue-tinder.git node_modules/vue-tinder
+cd node_modules/vue-tinder
+yarn
+yarn build
+```
