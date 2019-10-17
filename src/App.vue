@@ -111,7 +111,7 @@ body {
 
 body {
   margin: 0;
-  background-image: linear-gradient(rgba(252, 252, 253, 0.5), #f7f7fb);
+  background-color: #20262e;
   overflow: hidden;
 }
 
