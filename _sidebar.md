@@ -1,8 +1,11 @@
-* 基础
- * [安装](/installation)
- * [快速开始](/quick-start)
-* 配置项
-  * [属性](/properties)
-  * [自定义事件](/events)
-  * [方法](/methods)
-  * [插槽](/slot)
+* Guide
+ * [Introduction](/introduction)
+ * [Getting Started](/getting-started)
+ * [Start With Bing Images](/bing-images)
+ * [How To Click](/how-to-click?)
+ * [Oops!](/oops)
+* API
+  * [Props](/properties)
+  * [Events](/events)
+  * [Methods](/methods)
+  * [Slot](/slot)

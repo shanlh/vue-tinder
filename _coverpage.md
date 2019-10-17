@@ -9,4 +9,4 @@
 <!-- * Not build static html files -->
 
 [View GitHub](https://github.com/shanlh/vue-tinder)
-[Get Started](/installation)
+[Get Started](/introduction)

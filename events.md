@@ -4,30 +4,23 @@
 
 * 返回值：`{type, key, item}`
 
-移除卡片后的回调函数，会由 `vue-tinder` 通过 `$emit` 来触发，如需在移除卡片后做处理，需要在 `vue-tinder实例` 上监听，如：
+移除卡片后的回调函数，会由 `VueTinder` 通过 `$emit` 来触发，如需在移除卡片后做处理，需要在组件上监听，如：
 
 ```html
-<div id="app">
-  <tinder @submit="submit" ... >
-    ...
-  <tinder>
-</div>
+<vue-tinder @submit="onSubmit" ... >
+  ...
+<vue-tinder>
 ```
 
 ```js
-new Vue({
-  el: '#app',
+export default {
   ...
   methods: {
-    submit (choice) {
-      // choice.type => 'like'|'nope'|'super'
-      // choice.key  => 被移除卡片的 key-name
-      // choice.item => 被移除卡片的完整对象
+    onSubmit(choice) {
+      // choice.type => 结果，like：向右，nope：向左，super：向上
+      // choice.key  => 被移除卡片的 keyName
+      // choice.item => queue 中的子对象
     }
   }
-})
+}
 ```
-
-
-* 参考
- * [属性 - key-name](/properties)
