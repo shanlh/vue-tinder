@@ -3,16 +3,11 @@
     <Tinder
       ref="tinder"
       key-name="id"
-      :allow-super="true"
-      :pointer-threshold="0.5"
-      :super-threshold="0.5"
       :queue.sync="queue"
-      @submit="submit"
       :max="3"
       :offset-y="10"
+      @submit="onSubmit"
     >
-      <!-- :max="3"
-      :offset-y="10" -->
       <template slot-scope="scope">
         <div
           class="pic"
@@ -58,7 +53,7 @@ export default {
       const list = []
       for (let i = 0; i < count; i++) {
         list.push({ id: source[this.offset], offset: this.offset })
-        this.offset += 1
+        this.offset++
       }
       if (append) {
         this.queue = this.queue.concat(list)
@@ -66,7 +61,7 @@ export default {
         this.queue.unshift(...list)
       }
     },
-    submit({ item }) {
+    onSubmit({ item }) {
       if (this.queue.length < 3) {
         this.mock()
       }
