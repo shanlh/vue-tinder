@@ -4,6 +4,8 @@
 
 仿造Tinder的Vue组件，类似国内的探探、陌陌等APP的左右滑动卡片功能。[vue-tinder 文档](https://shanlh.github.io/vue-tinder)
 
+![](.gitbook/assets/ping-mu-lu-zhi-2019101713.19.47-2.gif)
+
 ## 安装
 
 ### 直接下载 / CDN
