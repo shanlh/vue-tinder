@@ -17,15 +17,13 @@
       <TinderCard
         v-if="index < max + 1"
         :ready="index === max"
-        :key="item.uniqueKey || item[keyName]"
-        :data-id="item.uniqueKey || item[keyName]"
+        :key="item.$vtKey || item[keyName]"
+        :data-id="item.$vtKey || item[keyName]"
         :index="index"
         :state="state"
         :ratio="ratio"
         :rewind="
-          rewindKeys.indexOf(item.uniqueKey || item[keyName]) > -1
-            ? index
-            : false
+          rewindKeys.indexOf(item.$vtKey || item[keyName]) > -1 ? index : false
         "
         :tinder-mounted="tinderMounted"
         :scale-step="scaleStep"
