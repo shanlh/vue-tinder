@@ -186,8 +186,9 @@ export default {
   },
   watch: {
     queue(val) {
-      const newKeys = val.map(item => item.id)
-      const oldKeys = this.list.map(item => item.id)
+      const keyName = this.keyName
+      const newKeys = val.map(item => item[keyName])
+      const oldKeys = this.list.map(item => item[keyName])
       this.diff(newKeys, oldKeys)
     }
   },

@@ -26,9 +26,10 @@ export default {
      * @param {Array} list
      */
     rewind(list) {
+      const keyName = this.keyName
       // TODO: 其实可以换个地方把 id 放置进去，目前这么做主要是为了后期可以配置 rewind 的来源位置
       for (const item of list) {
-        this.rewindKeys.push(item.id)
+        this.rewindKeys.push(item[keyName] + '') // 避免数字类型的 id 引起后续判断不匹配
       }
       this.queue.unshift(...list)
     },
