@@ -124,7 +124,7 @@ export default {
     // 最大渲染数
     max: {
       type: Number,
-      default: 2
+      default: 3
     },
     scaleStep: {
       type: Number,
