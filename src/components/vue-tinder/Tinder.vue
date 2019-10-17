@@ -29,8 +29,9 @@
         "
         :tinder-mounted="tinderMounted"
         :scale-step="scaleStep"
-        @reverted="resetStatus"
         :offset-y="offsetY"
+        :offset-unit="offsetUnit"
+        @reverted="resetStatus"
       >
         <slot :data="item" :index="index" :status="status"></slot>
         <template v-if="index === 0 && status !== 2">
@@ -134,6 +135,10 @@ export default {
     offsetY: {
       type: Number,
       default: 0
+    },
+    offsetUnit: {
+      type: String,
+      default: 'px'
     }
   },
   data: () => ({

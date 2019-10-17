@@ -135,7 +135,7 @@ export default {
           y *= -1
           offsetScale *= -1
         }
-        translateY = `calc(${offsetScale}% + ${y}px)`
+        translateY = `calc(${offsetScale}% + ${y}${this.offsetUnit})`
       }
       return `translate3d(0,${translateY},0) scale3d(${scale},${scale},1)`
     }
