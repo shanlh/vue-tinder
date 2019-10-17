@@ -9,7 +9,7 @@ then
   echo "Releasing $VERSION ..."
 
   # build
-  npm run build
+  yarn build
 
   # commit
   git add -A
