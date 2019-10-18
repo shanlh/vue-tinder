@@ -1,8 +1,8 @@
-# Introduction
+# 简介
 
 `VueTinder` 是一款能让你快速实现 [Tinder](https://tinder.com) 主要功能的 Vue 组件，[使用文档](https://shanlh.github.io/vue-tinder)。
 
-## Features
+## 特性
 
 - 用❤️开发，在 Chrome 动画调试速度 10% 时依然能有出色并自然的表现
 - 新支持回退功能，可以根据实际使用情况回退一个或多个
