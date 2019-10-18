@@ -40,8 +40,6 @@ export default {
   components: { Tinder },
   data: () => ({
     queue: [],
-    start: 0,
-    now: 0,
     offset: 0,
     history: []
   }),
@@ -52,7 +50,7 @@ export default {
     mock(count = 5, append = true) {
       const list = []
       for (let i = 0; i < count; i++) {
-        list.push({ id: source[this.offset], offset: this.offset })
+        list.push({ id: source[this.offset] })
         this.offset++
       }
       if (append) {
