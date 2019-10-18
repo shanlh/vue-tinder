@@ -12,7 +12,7 @@
 - 体积很小，只有 5kb
 - 可根据使用情况定制 pointerThreshold、superThreshold
 
-[在线预览](https://codesandbox.io/s/vue-template-by7qi)
+[在线预览](https://codesandbox.io/embed/vue-tinder-preview-by7qi)
 
 ![](https://raw.githubusercontent.com/shanlh/vue-tinder/master/.gitbook/assets/ping-mu-lu-zhi-2019101713.19.47-2.gif)
 
