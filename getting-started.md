@@ -5,7 +5,7 @@
 ### NPM / Yarn
 推荐在构建大型应用的时候使用这种方式进行安装。
 
-```bash
+``` bash
 npm install vue-tinder --save
 # or
 yarn add vue-tinder
@@ -63,7 +63,7 @@ Vue.use(VueTinder)
 
 如果你想使用最新的开发版，就得从 GitHub 上直接 clone，然后自己 build 一个 `VueTinder`。
 
-```text
+``` bash
 git clone https://github.com/shanlh/vue-tinder.git node_modules/vue-tinder
 cd node_modules/vue-tinder
 yarn

@@ -6,7 +6,7 @@
 
 作为了解这款插件的第一步，我们将会做一个能选择是否喜欢的 Bing Images，先来看看结果吧，滑动卡片试试：
 
-<iframe width="100%" height="667" src="https://codesandbox.io/embed/m75xlz4r4j" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="667" src="https://codesandbox.io/embed/vue-tinder-bing-images-zufp4" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 首先，我们需要编写模板，内容大概如下（已省略不重要的代码）：
 

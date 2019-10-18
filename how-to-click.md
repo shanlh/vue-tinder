@@ -1,6 +1,8 @@
 # 如何点击？
 
-在上一节中，我们只能通过滑动来决定是否喜欢，有些时候用户可能并不想滑动，`VueTinder` 也想到了这点，为你准备了一些方法来为用户执行操作。
+在上一节中，我们只能通过滑动来决定是否喜欢，有些时候用户可能并不想滑动，`VueTinder` 也想到了这点，为你准备了一些方法来为用户执行操作，示例如下：
+
+<iframe width="100%" height="667" src="https://codesandbox.io/embed/vue-tinder-how-to-click-k03bo" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 首先，我们需要添加点击按钮：
 
