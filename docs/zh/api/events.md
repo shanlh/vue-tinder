@@ -1,4 +1,4 @@
-# 自定义事件
+# 事件
 
 ## submit
 
@@ -17,9 +17,9 @@ export default {
   ...
   methods: {
     onSubmit(choice) {
-      // choice.type => 结果，like：向右，nope：向左，super：向上
-      // choice.key  => 被移除卡片的 keyName
-      // choice.item => queue 中的子对象
+      // choice.type： 结果，'like'：右滑, 'nope'：左滑, 'super'：上滑
+      // choice.key：  被移除卡片的 keyName
+      // choice.item： queue 中的子对象
     }
   }
 }

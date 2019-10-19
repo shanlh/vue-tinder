@@ -13,9 +13,9 @@ yarn add vue-tinder
 
 ### Direct download / CDN
 
-https://unpkg.com/vue-tinder/dist/vue-tinder.js
+[https://unpkg.com/vue-tinder/dist/vue-tinder.js](https://unpkg.com/vue-tinder/dist/vue-tinder.js)
 
-Unpkg.com provides an NPM-based CDN link, and the link above will always point to the latest version released by NPM. You can also specify the version number or Tag like https://unpkg.com/vue-tinder@2.0.0/dist/vue-tinder.js.
+Unpkg.com provides an NPM-based CDN link, and the link above will always point to the latest version released by NPM. You can also specify the version number or Tag like [https://unpkg.com/vue-tinder@2.0.0/dist/vue-tinder.js](https://unpkg.com/vue-tinder@2.0.0/dist/vue-tinder.js).
 
 After the plugin is introduced using the `script` tag, the VueTinder component is automatically registered to the global and can be used directly during development.
 
@@ -60,7 +60,6 @@ Vue.use(VueTinder)
 As with `script`, the plugin format also registers the `VueTinder` component as a global component, eliminating the need to re-register with the `components` attribute in your own components.
 
 ## Build development version
-
 
 If you want to use the latest development version, you have to clone directly from GitHub and build a `VueTinder` yourself.
 

@@ -2,15 +2,15 @@
 home: true
 # heroImage: /hero.png
 heroText: VueTinder
-tagline: Hero 副标题
-actionText: 快速上手 →
+tagline: Have your own Tinder.
+actionText: Getting Started →
 actionLink: /guide/
 features:
-- title: 简洁至上
-  details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-- title: Vue驱动
-  details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
-- title: 高性能
-  details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
-footer: MIT Licensed | Copyright © 2018-present Evan You
+- title: Made With ❤️
+  details: Strict detail requirements, under the slow motion, can better see the ease of transition animation, no matter how fast and complicated the operation does not have to worry about the problem.
+- title: Full Functioning
+  details: In addition to the original left, right, and up-sliding, a new fallback function has been added, which also supports multiple rollbacks at the same time.
+- title: Rich Configuration
+  details: Adjustable sliding, spacing parameters and CSS units for a more flexible and adaptable layout.
+footer: MIT Licensed | Copyright © 2017-present JohnnyDan
 ---

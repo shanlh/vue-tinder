@@ -35,8 +35,7 @@
 <vue-tinder>
 ```
 
-* 参考
- * [解构 slot-scope](https://cn.vuejs.org/v2/guide/components-slots.html#%E8%A7%A3%E6%9E%84-slot-scope)
+* 参考: [作用域插槽](https://cn.vuejs.org/v2/guide/components-slots.html#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD)
 
 ## like
 
@@ -46,7 +45,6 @@
 
 ```html
 <vue-tinder :pointer-threshold="0.5" ... >
-  <!-- 带上 slot="like"，怎样都行 -->
   <template slot="like">
     ...
   </template>

@@ -2,7 +2,9 @@
 
 > 教程中的案例代码将使用 ES2015 来编写。
 
-?> 本教程图片素材使用 [BING 美图](https://bing.com/)
+::: tip
+本教程图片素材使用 [BING 美图](https://bing.com/)
+:::
 
 作为了解这款插件的第一步，我们将会做一个能选择是否喜欢的 Bing Images，先来看看结果吧，滑动卡片试试：
 
@@ -26,7 +28,9 @@
 
 在模板中，我们为 `VueTinder` 绑定了 `queue.sync` 作为数据源，在 `VueTinder` 内部会循环这个队列，并使用一个叫做 `onSubmit` 的方法监听组件的 `submit` 事件，我们还配置了 `offset-y` 属性，使卡片与卡片之间间隔了  `10px`，如果你使用 `rem` 来做移动端适配，可以通过修改 `offsetUnit` 来修改卡片间距的 css 单位。
 
-!> 注意，请不要去除 `queue` 的 `.sync` 修饰符，`VueTinder` 会根据你的滑动操作来对 `queue` 进行修改。[为什么这么做？](https://cn.vuejs.org/v2/guide/components-custom-events.html)
+::: warning
+请不要去除 `queue` 的 `.sync` 修饰符，`VueTinder` 会根据你的滑动操作来对 `queue` 进行修改。[为什么这么做？](https://cn.vuejs.org/v2/guide/components-custom-events.html#sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6)
+:::
 
 我们还为 `VueTinder` 设置了属性 `keyName`，这样 `VueTinder` 才知道如何为内部 `v-for` 设置 `key`，该属性默认值为 `key`，如果正好与你的一样则不必设置。
 
@@ -42,8 +46,9 @@
 这对 `VueTinder` 很重要，内部触摸事件需要用到高度，为了实现不同起始位置对应的移动动画。
 
 接下来是获取数据、接受操作结果，当返回结果后可以根据实际情况判断是否需要追加数据，示例所用的 mock 方法`仅作示意`，`请勿直接复制`，你可根据实际情况进行修改：
+
 ```js
-import source from '@/where/source' // 如：[ {id: 'AdelieBreeding_ZH-CN1750945258'} , ... ]
+import source from '@/where/source' // 如: [ {id: 'AdelieBreeding_ZH-CN1750945258'} , ... ]
 
 export default {
   data: () => ({
@@ -60,9 +65,9 @@ export default {
       this.queue = this.queue.concat(list)
     },
     onSubmit(type, key, item) {
-      // type：结果，like：向右，nope：向左，super：向上
-      // key： 被移除卡片的 keyName
-      // item：queue 中的子对象
+      // type： 结果，'like'：右滑, 'nope'：左滑, 'super'：上滑
+      // key：  被移除卡片的 keyName
+      // item： queue 中的子对象
       if (this.queue.length < 3) {
         this.mock()
       }
@@ -71,5 +76,4 @@ export default {
 }
 ```
 
-现在，你已经用 `VueTinder` 完成了一个可以选择是否喜欢的 Bing Images，还差点什么？请看下节：如何点击？
-
+现在，你已经用 `VueTinder` 完成了一个可以选择是否喜欢的 Bing Images，还差点什么？请看下节：[如何点击？](/zh/guide/how-to-click) →

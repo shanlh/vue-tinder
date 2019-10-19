@@ -1,6 +1,6 @@
-# 快速上手
+# 快速起步
 
-## 安装插件
+## 安装
 
 ### NPM / Yarn
 推荐在构建大型应用的时候使用这种方式进行安装。
@@ -13,9 +13,9 @@ yarn add vue-tinder
 
 ### 直接下载 / CDN
 
-https://unpkg.com/vue-tinder/dist/vue-tinder.js
+[https://unpkg.com/vue-tinder/dist/vue-tinder.js](https://unpkg.com/vue-tinder/dist/vue-tinder.js)
 
-Unpkg.com 提供了基于 NPM 的 CDN 链接，上面的链接会一直指向在 NPM 发布的最新版本。你也可以像 https://unpkg.com/vue-tinder@2.0.0/dist/vue-tinder.js 这样指定 版本号 或者 Tag。
+Unpkg.com 提供了基于 NPM 的 CDN 链接，上面的链接会一直指向在 NPM 发布的最新版本。你也可以像 [https://unpkg.com/vue-tinder@2.0.0/dist/vue-tinder.js](https://unpkg.com/vue-tinder@2.0.0/dist/vue-tinder.js) 这样指定 版本号 或者 Tag。
 
 在使用 `script` 标签引入此插件后，VueTinder 组件会被自动注册到全局，开发时直接进行使用即可。
 

@@ -1,44 +1,48 @@
-# 方法
+# Methods
 
 ## decide
 
-* 参数类型：`String`
-* 可选值：`'like'|'nope'|'super'`
+* Argument: `type`
+* Type: `String`
+* Available: `'like'|'nope'|'super'`
 
 ```html
 <vue-tinder ref="tinder" ... >
   ...
 <vue-tinder>
 ```
-```js
+
+```js {5,8,11}
 export default {
   ...
   methods: {
-    like() { // 相当于右滑
+    like() { // Swipe right
       this.$refs['tinder'].decide('like')
     },
-    nope() { // 相当于左滑
+    nope() { // Swipe left
       this.$refs['tinder'].decide('nope')
     },
-    superLike() { // 相当于上滑
+    superLike() { // Swipe up
       this.$refs['tinder'].decide('super')
     }
   }
 }
 ```
 
-## rewind
+## rewind <Badge text="new" type="tip" vertical="middle"/>
 
-* 参数类型：`Array`
+* Argument: `rewindList`
+* Type: `Array`
 
-只要保证传入的是数组，可以根据需要 rewind 一个或多个。
+As long as you are guaranteed to pass in an array, you can rewind one or more as needed.
 
 ```html
 <vue-tinder ref="tinder" ... >
   ...
 <vue-tinder>
 ```
-```js
+
+```js {5}
 export default {
   ...
   methods: {

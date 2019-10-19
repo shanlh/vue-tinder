@@ -2,7 +2,8 @@
 
 ## decide
 
-* 参数类型：`String`
+* 参数: `type`
+* 类型：`String`
 * 可选值：`'like'|'nope'|'super'`
 
 ```html
@@ -10,26 +11,28 @@
   ...
 <vue-tinder>
 ```
-```js
+
+```js {5,8,11}
 export default {
   ...
   methods: {
-    like() { // 相当于右滑
+    like() { // 右滑
       this.$refs['tinder'].decide('like')
     },
-    nope() { // 相当于左滑
+    nope() { // 左滑
       this.$refs['tinder'].decide('nope')
     },
-    superLike() { // 相当于上滑
+    superLike() { // 上滑
       this.$refs['tinder'].decide('super')
     }
   }
 }
 ```
 
-## rewind
+## rewind <Badge text="new" type="tip" vertical="middle"/>
 
-* 参数类型：`Array`
+* 参数： `rewindList`
+* 类型： `Array`
 
 只要保证传入的是数组，可以根据需要 rewind 一个或多个。
 
@@ -38,7 +41,8 @@ export default {
   ...
 <vue-tinder>
 ```
-```js
+
+```js {5}
 export default {
   ...
   methods: {

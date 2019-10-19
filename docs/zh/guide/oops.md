@@ -27,8 +27,10 @@ export default {
   ...
   methods: {
     decide(choice) {
-      if(choice === 'rewind'){
-        this.$refs.tinder.rewind([this.history.pop()])
+      if(choice === 'rewind') {
+        if(this.history.length) {
+          this.$refs.tinder.rewind([this.history.pop()])
+        }
         return
       }
       this.$refs.tinder.decide(choice)
@@ -43,4 +45,4 @@ export default {
 
 示例中，我们用 `history` 来存放被执行操作的 `item`，你可以根据喜好来存放历史。需要注意的是：`VueTinder` 可以同时 `rewind` 多个，所以传入的必须是个数组，如果你只需要 `rewind` 一个，也需要用 `[]` 将其包裹。
 
-讲到这里，我们已经基本介绍完了，更高级的配置你可以通过查看 API 来了解。
+讲到这里，我们已经基本介绍完了，更高级的配置你可以通过查看 [API](/zh/api) 来了解。

@@ -30,4 +30,4 @@ export default {
 
 很简单吧，你只需要调用 `decide` 方法，传入对应的操作，如：nope、like、super 即可。
 
-可是如果用户因为误操作想要返回该怎么办呢？请看下节：Oops!
+可是如果用户因为误操作想要返回该怎么办呢？请看下节：[Oops!](/zh/guide/oops)
