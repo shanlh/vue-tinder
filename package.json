@@ -11,7 +11,10 @@
     "serve": "vue-cli-service serve",
     "build": "rollup -c rollup.config.js",
     "lint": "vue-cli-service lint",
-    "release": "bash ./release.sh"
+    "release": "bash release.sh",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "bash deploy_docs.sh"
   },
   "keywords": [
     "tinder",
@@ -40,7 +43,8 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-uglify": "^6.0.3",
     "rollup-plugin-vue": "^5.0.1",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "vuepress": "^1.2.0"
   },
   "eslintConfig": {
     "root": true,
