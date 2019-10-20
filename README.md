@@ -2,6 +2,10 @@
 
 `VueTinder` is a Vue component that helps you quickly implement the main features of similar apps like [Tinder](https://tinder.com), [TanTan](https://tantanapp.com/), etc.
 
+## Links
+
+* 📘Documentation: [https://shanlh.github.io/vue-tinder](https://shanlh.github.io/vue-tinder)
+
 ## Features
 
 - Made With ❤️, strict detail requirements, under the slow motion, can better see the ease of transition animation, no matter how fast and complicated the operation does not have to worry about the problem.
