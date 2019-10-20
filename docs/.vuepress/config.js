@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/vue-tinder/',
   locales: {
     // 键名是该语言所属的子路径
     // 作为特例，默认语言可以使用 '/' 作为其路径。
