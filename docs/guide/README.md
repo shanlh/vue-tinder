@@ -9,7 +9,7 @@
 - Rich Configuration, adjustable sliding, spacing parameters and CSS units for a more flexible and adaptable layout.
 - Simple and lightweight (~5KB after Gzip compression)
 
-[在线预览](https://codesandbox.io/embed/vue-tinder-preview-by7qi)
+[Preview](https://codesandbox.io/embed/vue-tinder-preview-by7qi)
 
 ![](https://raw.githubusercontent.com/shanlh/vue-tinder/master/.gitbook/assets/ping-mu-lu-zhi-2019101713.19.47-2.gif)
 

@@ -1,26 +1,23 @@
-# VueTinder 简介
+# Introduction
 
-`VueTinder` 是一款能让你快速实现 [Tinder](https://tinder.com) 主要功能的 Vue 组件，[使用文档](https://shanlh.github.io/vue-tinder)。
+`VueTinder` is a Vue component that helps you quickly implement the main features of similar apps like [Tinder](https://tinder.com), [TanTan](https://tantanapp.com/), etc.
 
-## 特性
+## Features
 
-- 用❤️开发，在 Chrome 动画调试速度 10% 时依然能有出色并自然的表现
-- 新支持回退功能，可以根据实际使用情况回退一个或多个
-- 可以配置不同的上下间距，实现多种卡片堆叠形态
-- 兼容其他 css 单位如：rem
-- 支持异步操作，为用户带来丝滑的体验
-- 体积很小，只有 5kb
-- 可根据使用情况定制 pointerThreshold、superThreshold
+- Made With ❤️, strict detail requirements, under the slow motion, can better see the ease of transition animation, no matter how fast and complicated the operation does not have to worry about the problem.
+- Full Functioning, in addition to the original left, right, and up-sliding, a new fallback function has been added, which also supports multiple rollbacks at the same time.
+- Rich Configuration, adjustable sliding, spacing parameters and CSS units for a more flexible and adaptable layout.
+- Simple and lightweight (~5KB after Gzip compression)
 
-[在线预览](https://codesandbox.io/s/vue-template-by7qi)
+[Preview](https://codesandbox.io/embed/vue-tinder-preview-by7qi)
 
 ![](https://raw.githubusercontent.com/shanlh/vue-tinder/master/.gitbook/assets/ping-mu-lu-zhi-2019101713.19.47-2.gif)
 
 ## TODO
 
-VueTinder 仍然处于开发中，这里有一些目前已知存在的问题：
+VueTinder is still under development, and here are some of the issues that are currently known:
 
-- 移动端在手指侧滑返回时可能会误触到 VueTinder
-- 非 sync 模式下，执行操作后立刻按住卡片不放，等前卡片完全消失即 DOM 节点被移除后会卡住，组件内 Touchend、Touchcancel 事件不触发
+- The mobile end may accidentally touch VueTinder when the finger slides back.
+- In non-sync mode, press and hold the card immediately after the operation. If the front card disappears completely, the DOM node will be stuck after being removed, and the Touchend and Touchcancel events in the component will not be triggered.
 
-欢迎你为 VueTinder 的开发作出贡献。
+You are welcome to contribute to the development of VueTinder.
