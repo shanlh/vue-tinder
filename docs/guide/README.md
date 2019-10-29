@@ -11,7 +11,7 @@
 
 [Preview](https://codesandbox.io/embed/vue-tinder-preview-by7qi)
 
-![](https://raw.githubusercontent.com/shanlh/vue-tinder/master/.gitbook/assets/ping-mu-lu-zhi-2019101713.19.47-2.gif)
+![](https://raw.githubusercontent.com/shanlh/vue-tinder/master/public/preview.gif)
 
 ## TODO
 

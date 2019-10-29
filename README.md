@@ -1,5 +1,10 @@
 # Introduction
 
+![Travis (.org)](https://img.shields.io/travis/shanlh/vue-tinder)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/vue-tinder)
+![npm](https://img.shields.io/npm/dm/vue-tinder)
+![NPM](https://img.shields.io/npm/l/vue-tinder)
+
 `VueTinder` is a Vue component that helps you quickly implement the main features of similar apps like [Tinder](https://tinder.com), [TanTan](https://tantanapp.com/), etc.
 
 ## Links
@@ -15,7 +20,7 @@
 
 [Preview](https://codesandbox.io/embed/vue-tinder-preview-by7qi)
 
-![](https://raw.githubusercontent.com/shanlh/vue-tinder/master/.gitbook/assets/ping-mu-lu-zhi-2019101713.19.47-2.gif)
+![](https://raw.githubusercontent.com/shanlh/vue-tinder/master/public/preview.gif)
 
 ## TODO
 
