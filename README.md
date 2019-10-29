@@ -10,6 +10,7 @@
 ## Links
 
 * 📘Documentation: [https://shanlh.github.io/vue-tinder](https://shanlh.github.io/vue-tinder)
+* 👉[Play with VueTinder online](https://codesandbox.io/embed/vue-tinder-preview-by7qi)
 
 ## Features
 
@@ -17,8 +18,6 @@
 - Full Functioning, in addition to the original left, right, and up-sliding, a new fallback function has been added, which also supports multiple rollbacks at the same time.
 - Rich Configuration, adjustable sliding, spacing parameters and CSS units for a more flexible and adaptable layout.
 - Simple and lightweight (~5KB after Gzip compression)
-
-[Preview](https://codesandbox.io/embed/vue-tinder-preview-by7qi)
 
 ![](https://raw.githubusercontent.com/shanlh/vue-tinder/master/public/preview.gif)
 
