@@ -10,7 +10,7 @@
 ## Links
 
 * 📘Documentation: [https://shanlh.github.io/vue-tinder](https://shanlh.github.io/vue-tinder)
-* 👉[Play with VueTinder online](https://codesandbox.io/embed/vue-tinder-preview-by7qi)
+* 👉[Play with vue-tinder online](https://codesandbox.io/embed/vue-tinder-preview-by7qi)
 
 ## Features
 
