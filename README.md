@@ -1,6 +1,6 @@
 # Introduction
 
-![Travis (.org)](https://img.shields.io/travis/shanlh/vue-tinder)
+![Travis (.org)](https://img.shields.io/travis/shanlh/vue-tinder/master)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/vue-tinder)
 ![npm](https://img.shields.io/npm/dm/vue-tinder)
 ![NPM](https://img.shields.io/npm/l/vue-tinder)
