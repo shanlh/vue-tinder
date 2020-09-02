@@ -1,9 +1,10 @@
 # Introduction
 
-![Travis (.org)](https://img.shields.io/travis/shanlh/vue-tinder/master)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/vue-tinder)
-![npm](https://img.shields.io/npm/dm/vue-tinder)
-![NPM](https://img.shields.io/npm/l/vue-tinder)
+[![Travis (.org)](https://img.shields.io/travis/shanlh/vue-tinder/master)](https://travis-ci.org/github/shanlh/vue-tinder)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/vue-tinder)](https://www.npmjs.com/package/vue-tinder)
+[![npm](https://img.shields.io/npm/dm/vue-tinder)](https://www.npmjs.com/package/vue-tinder)
+[![NPM](https://img.shields.io/npm/v/vue-tinder.svg)](https://www.npmjs.com/package/vue-tinder)
+[![NPM](https://img.shields.io/npm/l/vue-tinder)](https://www.npmjs.com/package/vue-tinder)
 
 `VueTinder` is a Vue component that helps you quickly implement the main features of similar apps like [Tinder](https://tinder.com), [TanTan](https://tantanapp.com/), etc.
 
