@@ -58,6 +58,7 @@ export default {
       let duration =
         state.touchId === null || state.result === 'super' ? 800 : 300
       el.style.opacity = 0
+      el.style['pointer-events'] = 'none'
       if (this.leavingKeys.indexOf(el.dataset.id) > -1) {
         // 操作移除
         el.className += ` ${state.result}`
