@@ -18,6 +18,5 @@
 VueTinder is still under development, and here are some of the issues that are currently known:
 
 - The mobile end may accidentally touch VueTinder when the finger slides back.
-- In non-sync mode, press and hold the card immediately after the operation. If the front card disappears completely, the DOM node will be stuck after being removed, and the Touchend and Touchcancel events in the component will not be triggered.
 
 You are welcome to contribute to the development of VueTinder.

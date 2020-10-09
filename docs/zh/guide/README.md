@@ -18,6 +18,5 @@
 VueTinder 仍然处于开发中，这里有一些目前已知存在的问题：
 
 - 移动端在手指侧滑返回时可能会误触到 VueTinder
-- 非 sync 模式下，执行操作后立刻按住卡片不放，等前卡片完全消失即 DOM 节点被移除后会卡住，组件内 Touchend、Touchcancel 事件不触发
 
 欢迎你为 VueTinder 的开发作出贡献。
