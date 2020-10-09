@@ -53,7 +53,7 @@
             class="pointer-wrap super-pointer-wrap"
             :style="{ opacity: superOpacity }"
           >
-            <slot name="super" :opacity="superOpacity" />
+            <slot name="super" :opacity="superOpacity" :data="item"/>
           </span>
         </template>
         <!-- rewind 指示器显示不需要是第一张卡片，会由内部判断显示 -->
