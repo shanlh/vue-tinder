@@ -78,6 +78,20 @@ export default {
 
 向上移动直至消失时，移动距离占卡片高度的比例，默认移动 1/2 高度便符合移出条件。
 
+## allowDown <Badge text="new" type="tip" vertical="middle"/>
+
+* 类型：`Boolean`
+* 默认值：`false`
+
+是否允许响应下滑事件。
+
+## downThreshold <Badge text="new" type="tip" vertical="middle"/>
+
+* 类型：`Number`
+* 默认值：`0.5`
+
+类似 superThreshold。
+
 ## pointerThreshold
 
 * 类型：`Number`

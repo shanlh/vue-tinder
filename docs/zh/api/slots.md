@@ -63,6 +63,12 @@
 
 响应范围由 `super-threshold` 控制（默认 0.5 ）。
 
+## down
+
+类似 super。
+
+响应范围由 `down-threshold` 控制（默认 0.5 ）。
+
 ## rewind
 
 执行 `rewind` 操作时会短暂显示然后消失的插槽。

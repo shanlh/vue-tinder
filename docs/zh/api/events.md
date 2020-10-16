@@ -17,7 +17,7 @@ export default {
   ...
   methods: {
     onSubmit(choice) {
-      // choice.type： 结果，'like'：右滑, 'nope'：左滑, 'super'：上滑
+      // choice.type： 结果，'like'：右滑, 'nope'：左滑, 'super'：上滑，'down'：下滑
       // choice.key：  被移除卡片的 keyName
       // choice.item： queue 中的子对象
     }

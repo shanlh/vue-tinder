@@ -4,7 +4,7 @@
 
 * 参数: `type`
 * 类型：`String`
-* 可选值：`'like'|'nope'|'super'`
+* 可选值：`'like'|'nope'|'super'|'down'`
 
 ```html
 <vue-tinder ref="tinder" ... >
@@ -12,7 +12,7 @@
 <vue-tinder>
 ```
 
-```js {5,8,11}
+```js {5,8,11,14}
 export default {
   ...
   methods: {
@@ -24,6 +24,9 @@ export default {
     },
     superLike() { // 上滑
       this.$refs['tinder'].decide('super')
+    },
+    down() { // 下滑
+      this.$refs['tinder'].decide('down')
     }
   }
 }
