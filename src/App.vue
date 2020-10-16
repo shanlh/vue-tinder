@@ -6,6 +6,7 @@
       :queue.sync="queue"
       :max="3"
       :offset-y="10"
+      allow-down
       @submit="onSubmit"
     >
       <template slot-scope="scope">
@@ -19,6 +20,7 @@
       <img class="like-pointer" slot="like" src="~img/like-txt.png" />
       <img class="nope-pointer" slot="nope" src="~img/nope-txt.png" />
       <img class="super-pointer" slot="super" src="~img/super-txt.png" />
+      <img class="down-pointer" slot="down" src="~img/down-txt.png" />
       <img class="rewind-pointer" slot="rewind" src="~img/rewind-txt.png" />
     </Tinder>
     <div class="btns">
@@ -138,15 +140,23 @@ body {
   left: 10px;
 }
 
-.super-pointer {
+.super-pointer,
+.down-pointer {
   position: absolute;
   z-index: 1;
-  bottom: 80px;
   left: 0;
   right: 0;
   margin: auto;
   width: 112px;
   height: 78px;
+}
+
+.super-pointer {
+  bottom: 40px;
+}
+
+.down-pointer {
+  top: 40px;
 }
 
 .rewind-pointer {
