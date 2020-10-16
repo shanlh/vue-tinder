@@ -16,7 +16,7 @@
 ## Features
 
 - Made With ❤️, strict detail requirements, under the slow motion, can better see the ease of transition animation, no matter how fast and complicated the operation does not have to worry about the problem.
-- Full Functioning, in addition to the original left, right, and up-sliding, a new fallback function has been added, which also supports multiple rollbacks at the same time.
+- Full Functioning, in addition to the original left, right, and up/down-sliding, a new fallback function has been added, which also supports multiple rollbacks at the same time.
 - Rich Configuration, adjustable sliding, spacing parameters and CSS units for a more flexible and adaptable layout.
 - Simple and lightweight (~5KB after Gzip compression)
 

@@ -4,7 +4,7 @@
 
 * Argument: `type`
 * Type: `String`
-* Available: `'like'|'nope'|'super'`
+* Available: `'like'|'nope'|'super'|'down'`
 
 ```html
 <vue-tinder ref="tinder" ... >
@@ -12,7 +12,7 @@
 <vue-tinder>
 ```
 
-```js {5,8,11}
+```js {5,8,11,14}
 export default {
   ...
   methods: {
@@ -24,6 +24,9 @@ export default {
     },
     superLike() { // Swipe up
       this.$refs['tinder'].decide('super')
+    },
+    down() { // Swipe down
+      this.$refs['tinder'].decide('down')
     }
   }
 }

@@ -78,6 +78,20 @@ Whether to allow a response to a slip event. When sliding up in the open state, 
 
 When moving up until it disappears, the moving distance is proportional to the height of the card. By default, the 1/2 height is in accordance with the removal condition.
 
+## allowDown <Badge text="new" type="tip" vertical="middle"/>
+
+* Type: `Boolean`
+* Default: `false`
+
+Support to move down.
+
+## downThreshold <Badge text="new" type="tip" vertical="middle"/>
+
+* Type: `Number`
+* Default: `0.5`
+
+Similar to superThreshold.
+
 ## pointerThreshold
 
 * Type: `Number`

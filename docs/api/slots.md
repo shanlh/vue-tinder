@@ -63,6 +63,12 @@ The slot that gradually becomes opaque during the sliding process, except for th
 
 The response range is controlled by `super-threshold` (default 0.5).
 
+## down
+
+Similar to super.
+
+The response range is controlled by `down-threshold` (default 0.5).
+
 ## rewind
 
 The slot that disappears and then disappears when the `rewind` operation is executed.

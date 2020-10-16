@@ -17,7 +17,7 @@ export default {
   ...
   methods: {
     onSubmit(choice) {
-      // choice.type => result，'like': swipe right, 'nope': swipe left, 'super': swipe up
+      // choice.type => result，'like': swipe right, 'nope': swipe left, 'super': swipe up, 'down': swipe down
       // choice.key  => The keyName of the removed card
       // choice.item => Child object in queue
     }
