@@ -9,6 +9,7 @@
     <slot name="nope" />
     <slot name="like" />
     <slot name="super" />
+    <slot name="down" />
     <transition name="tinder-rewind">
       <slot name="rewind" v-if="scopedRewind !== false" />
     </transition>

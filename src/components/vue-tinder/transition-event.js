@@ -49,6 +49,8 @@ export default {
       let y = move.y - start.y || 0
       if (state.result === 'super') {
         y -= this.size.width
+      } else if (state.result === 'down') {
+        y += this.size.width
       } else {
         x += this.size.width * (x < 0 ? -0.5 : 0.5)
         y *= x / (move.x - start.x)
@@ -56,7 +58,11 @@ export default {
       const ratio = x / (this.size.width * 0.5) // 不能直接使用 this.ratio，因为 x、y 被微调过
       const rotate = (ratio / (0.8 / 0.5)) * 15 * startPoint
       let duration =
-        state.touchId === null || state.result === 'super' ? 800 : 300
+        state.touchId === null ||
+        state.result === 'super' ||
+        state.result === 'down'
+          ? 800
+          : 300
       el.style.opacity = 0
       el.style['pointer-events'] = 'none'
       if (this.leavingKeys.indexOf(el.dataset.id) > -1) {

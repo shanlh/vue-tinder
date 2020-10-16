@@ -95,10 +95,16 @@ export default {
       ) {
         return
       }
-      if (Math.abs(this.pointerOpacity) >= 1 || this.superOpacity >= 1) {
+      if (
+        Math.abs(this.pointerOpacity) >= 1 ||
+        this.superOpacity >= 1 ||
+        this.downOpacity >= 1
+      ) {
         const result =
           this.superOpacity >= 1
             ? 'super'
+            : this.downOpacity >= 1
+            ? 'down'
             : this.pointerOpacity > 0
             ? 'like'
             : 'nope'

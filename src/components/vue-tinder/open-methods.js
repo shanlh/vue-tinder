@@ -7,7 +7,7 @@ export default {
   methods: {
     /**
      * 点击按钮做选择
-     * @param {String} type like：喜欢，nope：不喜欢，super：超喜欢
+     * @param {String} type like：喜欢，nope：不喜欢，super：超喜欢，down：向下
      */
     decide(type) {
       if (this.state.touchId || this.status !== STATUS.NORMAL) {
@@ -15,8 +15,8 @@ export default {
       }
       this.state.start = { x: 0, y: 0 }
       this.state.move = {
-        x: type === 'super' ? 0 : type === 'like' ? 1 : -1,
-        y: type === 'super' ? -1 : 0
+        x: type === 'super' || type === 'down' ? 0 : type === 'like' ? 1 : -1,
+        y: type === 'super' ? -1 : type === 'down' ? 1 : 0
       }
       this.state.startPoint = 1
       this.shiftCard(type)
@@ -36,7 +36,7 @@ export default {
     /***************** 以下方法不对外开放，对 queue 操作请用以上的函数 *****************/
     /**
      * 把卡片移除
-     * @param {String} type 移除方式，like：喜欢，nope：不喜欢，super：超喜欢
+     * @param {String} type 移除方式，like：喜欢，nope：不喜欢，super：超喜欢，down：向下
      */
     shiftCard(type) {
       this.state.status = STATUS.LEAVING
@@ -47,7 +47,7 @@ export default {
     },
     /**
      * 提交选择
-     * @param {Boolean} type 类型，like：喜欢，nope：不喜欢，super：超喜欢
+     * @param {Boolean} type 类型，like：喜欢，nope：不喜欢，super：超喜欢，down：向下
      * @param {String}  key  当前卡片的key
      * @param {Object}  item 卡片对象
      */

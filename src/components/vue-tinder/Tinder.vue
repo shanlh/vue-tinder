@@ -55,6 +55,14 @@
           >
             <slot name="super" :opacity="superOpacity" />
           </span>
+          <span
+            v-if="allowDown"
+            slot="down"
+            class="pointer-wrap down-pointer-wrap"
+            :style="{ opacity: downOpacity }"
+          >
+            <slot name="down" :opacity="downOpacity" />
+          </span>
         </template>
         <!-- rewind 指示器显示不需要是第一张卡片，会由内部判断显示 -->
         <span
@@ -91,6 +99,10 @@ export default {
       type: Boolean,
       default: true
     },
+    allowDown: {
+      type: Boolean,
+      default: false
+    },
     queue: {
       type: Array,
       default: () => []
@@ -112,6 +124,10 @@ export default {
      * 默认移动 1/2 高度便符合移出条件
      */
     superThreshold: {
+      type: Number,
+      default: 0.5
+    },
+    downThreshold: {
       type: Number,
       default: 0.5
     },
@@ -167,18 +183,31 @@ export default {
     pointerOpacity() {
       return this.ratio / this.pointerThreshold
     },
+    disY() {
+      if (this.allowSuper || this.allowDown) {
+        return this.state.move.y - this.state.start.y
+      }
+      return 0
+    },
     superOpacity() {
       if (!this.allowSuper) {
         return 0
       }
-      const disY = this.state.move.y - this.state.start.y
-      const ratio = disY / (-this.superThreshold * this.size.height)
+      const ratio = this.disY / (-this.superThreshold * this.size.height)
+      const pointerOpacity = Math.abs(this.pointerOpacity)
+      return ratio > pointerOpacity ? ratio : 0
+    },
+    downOpacity() {
+      if (!this.allowDown) {
+        return 0
+      }
+      const ratio = this.disY / (this.downThreshold * this.size.height)
       const pointerOpacity = Math.abs(this.pointerOpacity)
       return ratio > pointerOpacity ? ratio : 0
     },
     likeOpacity() {
       // 如果当前卡片正在往上滑，需要隐藏喜欢/不喜欢
-      if (this.superOpacity) {
+      if (this.superOpacity || this.downOpacity) {
         return 0
       }
       return this.pointerOpacity
@@ -254,13 +283,15 @@ export default {
 /* 通过调用函数让卡片消失时需要直接显示对应状态，不需要过渡动画 */
 .tinder-card.nope .nope-pointer-wrap,
 .tinder-card.like .like-pointer-wrap,
-.tinder-card.super .super-pointer-wrap {
+.tinder-card.super .super-pointer-wrap,
+.tinder-card.down .down-pointer-wrap {
   opacity: 1 !important;
 }
 
 .tinder-card.nope .rewind-pointer-wrap,
 .tinder-card.like .rewind-pointer-wrap,
-.tinder-card.super .rewind-pointer-wrap {
+.tinder-card.super .rewind-pointer-wrap,
+.tinder-card.down .rewind-pointer-wrap {
   display: none;
 }
 </style>
