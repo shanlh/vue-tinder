@@ -89,6 +89,7 @@ let resizeTimer
 
 export default {
   name: 'Tinder',
+  emits: ['update:queue', 'submit'],
   mixins: [queueHandle, touchEvent, transitionEvent, openMethods],
   components: {
     TinderCard
@@ -241,7 +242,7 @@ export default {
   created() {
     this.list = this.queue.slice(0)
   },
-  destroyed() {
+  unmounted() {
     window.removeEventListener('onresize', this.getSize)
   },
   methods: {

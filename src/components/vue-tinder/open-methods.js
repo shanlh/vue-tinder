@@ -32,6 +32,7 @@ export default {
         this.rewindKeys.push(item[keyName] + '') // 避免数字类型的 id 引起后续判断不匹配
       }
       this.queue.unshift(...list)
+      this.$emit('update:queue', this.queue.slice(0))
     },
     /***************** 以下方法不对外开放，对 queue 操作请用以上的函数 *****************/
     /**
@@ -42,7 +43,7 @@ export default {
       this.state.status = STATUS.LEAVING
       this.state.result = type
       const item = this.queue.shift()
-      this.$emit('update:queue', this.queue)
+      this.$emit('update:queue', this.queue.slice(0))
       this.submitDecide(type, item)
     },
     /**

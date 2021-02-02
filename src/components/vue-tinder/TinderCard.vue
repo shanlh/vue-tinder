@@ -21,6 +21,7 @@ import { STATUS } from './status'
 
 export default {
   name: 'TinderCard',
+  emits: ['reverted'],
   props: {
     // 避免 vue-tinder 还未完全初始化时，各 tinder-card 因为没有生效的 style 而重叠
     tinderMounted: {

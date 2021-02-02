@@ -3,25 +3,35 @@
     <Tinder
       ref="tinder"
       key-name="id"
-      :queue.sync="queue"
+      v-model:queue="queue"
       :max="3"
       :offset-y="10"
       allow-down
       @submit="onSubmit"
     >
-      <template slot-scope="scope">
+      <template #default="{ data }">
         <div
           class="pic"
           :style="{
-            'background-image': `url(https://cn.bing.com//th?id=OHR.${scope.data.id}_UHD.jpg&pid=hp&w=720&h=1280&rs=1&c=4&r=0)`
+            'background-image': `url(https://cn.bing.com//th?id=OHR.${data.id}_UHD.jpg&pid=hp&w=720&h=1280&rs=1&c=4&r=0)`
           }"
         />
       </template>
-      <img class="like-pointer" slot="like" src="~img/like-txt.png" />
-      <img class="nope-pointer" slot="nope" src="~img/nope-txt.png" />
-      <img class="super-pointer" slot="super" src="~img/super-txt.png" />
-      <img class="down-pointer" slot="down" src="~img/down-txt.png" />
-      <img class="rewind-pointer" slot="rewind" src="~img/rewind-txt.png" />
+      <template #like>
+        <img class="like-pointer" src="~img/like-txt.png" />
+      </template>
+      <template #nope>
+        <img class="nope-pointer" slot="nope" src="~img/nope-txt.png" />
+      </template>
+      <template #super>
+        <img class="super-pointer" slot="super" src="~img/super-txt.png" />
+      </template>
+      <template #down>
+        <img class="down-pointer" slot="down" src="~img/down-txt.png" />
+      </template>
+      <template #rewind>
+        <img class="rewind-pointer" slot="rewind" src="~img/rewind-txt.png" />
+      </template>
     </Tinder>
     <div class="btns">
       <img src="~img/rewind.png" @click="decide('rewind')" />
