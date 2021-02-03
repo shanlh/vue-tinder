@@ -51,7 +51,9 @@
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-		"ignorePatterns": ["lib"]
+    "ignorePatterns": [
+      "lib"
+    ]
   },
   "prettier": {
     "semi": false,
@@ -64,6 +66,7 @@
       "autoprefixer": {}
     }
   },
+  "babel": {"presets": [["@vue/cli-plugin-babel/preset", { "useBuiltIns": false }]]},
   "browserslist": [
     "> 1%",
     "last 2 versions"
