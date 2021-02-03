@@ -18,27 +18,31 @@
         />
       </template>
       <template #like>
-        <img class="like-pointer" src="~img/like-txt.png" />
+        <img class="like-pointer" src="/images/like-txt.png" />
       </template>
       <template #nope>
-        <img class="nope-pointer" slot="nope" src="~img/nope-txt.png" />
+        <img class="nope-pointer" slot="nope" src="/images/nope-txt.png" />
       </template>
       <template #super>
-        <img class="super-pointer" slot="super" src="~img/super-txt.png" />
+        <img class="super-pointer" slot="super" src="/images/super-txt.png" />
       </template>
       <template #down>
-        <img class="down-pointer" slot="down" src="~img/down-txt.png" />
+        <img class="down-pointer" slot="down" src="/images/down-txt.png" />
       </template>
       <template #rewind>
-        <img class="rewind-pointer" slot="rewind" src="~img/rewind-txt.png" />
+        <img
+          class="rewind-pointer"
+          slot="rewind"
+          src="/images/rewind-txt.png"
+        />
       </template>
     </Tinder>
     <div class="btns">
-      <img src="~img/rewind.png" @click="decide('rewind')" />
-      <img src="~img/nope.png" @click="decide('nope')" />
-      <img src="~img/super-like.png" @click="decide('super')" />
-      <img src="~img/like.png" @click="decide('like')" />
-      <img src="~img/help.png" @click="decide('help')" />
+      <img src="/images/rewind.png" @click="decide('rewind')" />
+      <img src="/images/nope.png" @click="decide('nope')" />
+      <img src="/images/super-like.png" @click="decide('super')" />
+      <img src="/images/like.png" @click="decide('like')" />
+      <img src="/images/help.png" @click="decide('help')" />
     </div>
   </div>
 </template>
