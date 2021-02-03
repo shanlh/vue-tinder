@@ -1,5 +1,6 @@
 import vue from '@vitejs/plugin-vue'
-var path = require('path')
+import babel from 'rollup-plugin-babel'
+const path = require('path')
 
 function resolve(dir) {
   return path.join(__dirname, dir)
@@ -23,7 +24,13 @@ export default {
       output: {
         dir: 'lib',
         globals: { vue: 'Vue' }
-      }
+      },
+      plugins: [
+        babel({
+          runtimeHelpers: true,
+          extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.vue']
+        })
+      ]
     }
   }
 }
