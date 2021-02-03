@@ -1,5 +1,6 @@
 import vue from '@vitejs/plugin-vue'
 import babel from 'rollup-plugin-babel'
+import commonjs from 'rollup-plugin-commonjs'
 const path = require('path')
 
 function resolve(dir) {
@@ -26,6 +27,7 @@ export default {
         globals: { vue: 'Vue' }
       },
       plugins: [
+        commonjs({ sourceMap: false }),
         babel({
           runtimeHelpers: true,
           extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.vue']
