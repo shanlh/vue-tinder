@@ -43,8 +43,10 @@ export default {
       this.state.status = STATUS.LEAVING
       this.state.result = type
       const item = this.queue.shift()
-      this.$emit('update:queue', this.queue.slice(0))
-      this.submitDecide(type, item)
+      if (item) {
+        this.$emit('update:queue', this.queue.slice(0))
+        this.submitDecide(type, item)
+      }
     },
     /**
      * 提交选择
