@@ -78,6 +78,7 @@
 </template>
 
 <script>
+import { nextTick } from 'vue'
 import TinderCard from './TinderCard.vue'
 import queueHandle from './queue-handle'
 import touchEvent from './touch-event'
@@ -226,16 +227,18 @@ export default {
     }
   },
   mounted() {
-    if (!this.$el.offsetWidth || !this.$el.offsetHeight) {
-      /* eslint-disable-next-line */
-      console.error('请设置vue-tinder的宽高');
-      return
-    }
-    this.size = {
-      top: this.$el.offsetTop,
-      width: this.$el.offsetWidth,
-      height: this.$el.offsetHeight
-    }
+    nextTick(() => {
+      if (!this.$el.offsetWidth || !this.$el.offsetHeight) {
+        /* eslint-disable-next-line */
+        console.error('请设置vue-tinder的宽高');
+        return
+      }
+      this.size = {
+        top: this.$el.offsetTop,
+        width: this.$el.offsetWidth,
+        height: this.$el.offsetHeight
+      }
+    })
     window.onresize = this.getSize
     this.tinderMounted = true
   },
