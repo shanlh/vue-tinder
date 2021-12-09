@@ -10,7 +10,11 @@ export default {
      * @param {String} type like：喜欢，nope：不喜欢，super：超喜欢，down：向下
      */
     decide(type) {
-      if (this.state.touchId || this.status !== STATUS.NORMAL || !this.queue.length) {
+      if (
+        this.state.touchId ||
+        this.status !== STATUS.NORMAL ||
+        !this.queue.length
+      ) {
         return
       }
       this.state.start = { x: 0, y: 0 }
