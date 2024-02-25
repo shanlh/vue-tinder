@@ -154,6 +154,10 @@ export default {
     offsetUnit: {
       type: String,
       default: 'px'
+    },
+    disableTouch: {
+      type: Boolean,
+      default: false
     }
   },
   data: () => ({
