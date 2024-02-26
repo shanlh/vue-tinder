@@ -5,13 +5,13 @@
     :css="false"
     @beforeEnter="beforeEnter"
     @leave="leave"
-    @touchstart.native="start"
-    @touchmove.native="move"
-    @touchend.native="end"
-    @touchcancel.native="end"
-    @mousedown.native="start"
-    @mousemove.native="move"
-    @mouseup.native="end"
+    @touchstart="start"
+    @touchmove="move"
+    @touchend="end"
+    @touchcancel="end"
+    @mousedown="start"
+    @mousemove="move"
+    @mouseup="end"
   >
     <template v-for="(item, index) in list">
       <TinderCard
@@ -154,6 +154,10 @@ export default {
     offsetUnit: {
       type: String,
       default: 'px'
+    },
+    disableTouch: {
+      type: Boolean,
+      default: false
     }
   },
   data: () => ({
