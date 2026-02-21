@@ -1,6 +1,6 @@
 {
   "name": "vue-tinder",
-  "version": "3.0.0-alpha.2",
+  "version": "3.0.0-alpha.4",
   "description": "Imitate Tinder by Vue.js",
   "author": {
     "name": "JohnnyDan",
@@ -16,6 +16,20 @@
     "release": "bash release.sh"
   },
   "main": "lib/vue-tinder.es.js",
+  "module": "lib/vue-tinder.es.js",
+  "types": "index.d.ts",
+  "files": [
+    "lib",
+    "index.d.ts"
+  ],
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./lib/vue-tinder.es.js",
+      "require": "./lib/vue-tinder.umd.js"
+    },
+    "./style.css": "./lib/style.css"
+  },
   "dependencies": {
     "vue": "^3.0.5"
   },
@@ -54,7 +68,8 @@
       "parser": "@babel/eslint-parser"
     },
     "ignorePatterns": [
-      "lib"
+      "lib",
+      "*.d.ts"
     ]
   },
   "prettier": {

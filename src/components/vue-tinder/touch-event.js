@@ -7,6 +7,9 @@ export default {
      * @param {Object} e 触摸/鼠标事件
      */
     start(e) {
+      if (this.disableTouch) {
+        return
+      }
       const state = this.state
       if (
         state.touchId !== null ||
@@ -52,6 +55,9 @@ export default {
      * @param {Object} e 触摸/鼠标事件
      */
     move(e) {
+      if (this.disableTouch) {
+        return
+      }
       e.preventDefault()
       const state = this.state
       if (
@@ -82,6 +88,9 @@ export default {
      * @param {Object} e 触摸/鼠标事件
      */
     end(e) {
+      if (this.disableTouch) {
+        return
+      }
       if (
         e.type === 'touchstart' &&
         this.state.touchId !== e.changedTouches[0].identifier
