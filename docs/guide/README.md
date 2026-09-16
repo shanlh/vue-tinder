@@ -1,6 +1,8 @@
 # Introduction
 
-`VueTinder` is a Vue component that helps you quickly implement the main features of similar apps like [Tinder](https://tinder.com), [TanTan](https://tantanapp.com/), etc.
+`VueTinder` is a lightweight Vue component for swipeable card stacks, with multidirectional gestures, programmatic controls, undo support, and customizable slots.
+
+> This project is an independent open-source UI component and is not affiliated with Tinder LLC.
 
 ## Features
 

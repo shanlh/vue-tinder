@@ -1,7 +1,7 @@
 ---
 home: true
 heroText: VueTinder
-tagline: 创造属于你的 Tinder
+tagline: 支持手势滑动与撤回的 Vue 卡片堆叠组件
 actionText: 快速上手 →
 actionLink: /zh/guide/
 features:
@@ -13,3 +13,5 @@ features:
   details: 可调滑动、间距、缩放比例参数及 CSS 单位，以实现更灵活，更具适配性的布局。
 footer: MIT Licensed | Copyright © 2017-present JohnnyDan
 ---
+
+> 本项目是独立的开源 UI 组件，与 Tinder LLC 无任何关联。

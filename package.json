@@ -1,7 +1,7 @@
 {
   "name": "vue-tinder",
   "version": "2.0.2",
-  "description": "Imitate Tinder by Vue.js",
+  "description": "A lightweight Vue component for swipeable card stacks",
   "main": "lib/vue-tinder.js",
   "author": {
     "name": "JohnnyDan",
@@ -17,8 +17,8 @@
     "docs:deploy": "bash deploy_docs.sh"
   },
   "keywords": [
-    "tinder",
-    "tantan",
+    "swipe",
+    "cards",
     "vue"
   ],
   "repository": {

@@ -1,6 +1,8 @@
 # 介绍
 
-`VueTinder` 是一款能帮助你快速实现 [Tinder](https://tinder.com) 、 [探探](https://tantanapp.com/) 等类似 APP 主要功能的 Vue 组件，[使用文档](https://shanlh.github.io/vue-tinder)。
+`VueTinder` 是一个轻量的 Vue 卡片堆叠组件，支持多方向手势滑动、程序化操作、撤回及自定义插槽。[使用文档](https://shanlh.github.io/vue-tinder)。
+
+> 本项目是独立的开源 UI 组件，与 Tinder LLC 无任何关联。
 
 ## 特性
 

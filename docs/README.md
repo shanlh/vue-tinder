@@ -2,7 +2,7 @@
 home: true
 # heroImage: /hero.png
 heroText: VueTinder
-tagline: Have your own Tinder.
+tagline: A Vue component for swipeable card stacks.
 actionText: Getting Started →
 actionLink: /guide/
 features:
@@ -14,3 +14,5 @@ features:
   details: Adjustable sliding, spacing parameters and CSS units for a more flexible and adaptable layout.
 footer: MIT Licensed | Copyright © 2017-present JohnnyDan
 ---
+
+> This project is an independent open-source UI component and is not affiliated with Tinder LLC.
